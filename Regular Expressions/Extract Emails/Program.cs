@@ -11,7 +11,7 @@ namespace Extract_Emails
         {
             string text = Console.ReadLine();
 
-            string pattern = @"[A-Za-z.-0-9_]+?[A-Za-z0-9]+[_\-.]?@[A-Za-z]+[-.]*?\.?[A-Za-z]+\.[A-Za-z]+";
+            string pattern = @"[A-Za-z0-9]+[.\-_A-Za-z]+@[A-Za-z]+[A-Za-z-.]+\.[A-Za-z]+";
 
             Regex regex = new Regex(pattern);
 
