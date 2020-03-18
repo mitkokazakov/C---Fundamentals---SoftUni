@@ -11,7 +11,7 @@ namespace Extract_Emails
         {
             string text = Console.ReadLine();
 
-            string pattern = @"[A-Za-z0-9]+[.\-_A-Za-z]+@[A-Za-z]+[A-Za-z-.]+\.[A-Za-z]+";
+            string pattern = @"[\s]([A-Za-z0-9]+[.\-_A-Za-z]+@[A-Za-z]+[A-Za-z-.]+\.[A-Za-z]+)";
 
             Regex regex = new Regex(pattern);
 
@@ -19,7 +19,7 @@ namespace Extract_Emails
 
             foreach (Match mail in extractedEmails)
             {
-                Console.WriteLine(mail.Value);
+                Console.WriteLine(mail.Groups[1].Value);
             }
         }
     }
