@@ -49,15 +49,17 @@ namespace Winning_Ticket
                     }
                     
 
-                    if (lenLeftSide >= 6 && lenRightSide >= 6 && lenLeftSide == lenRightSide && singleSymbolLeft == singleSymbolRight  )
+                    if (lenLeftSide >= 6 && lenRightSide >= 6 &&  singleSymbolLeft == singleSymbolRight  )
                     {
+                        int bestLen = Math.Min(lenLeftSide,lenRightSide);
+
                         if (lenRightSide == 10 && lenLeftSide == 10)
                         {
                             Console.WriteLine($"ticket \"{currentTicket}\" - {lenRightSide}{singleSymbolRight} Jackpot!");
                         }
-                        else if (lenRightSide >= 6 && lenRightSide <= 9)
+                        else if (bestLen >=6 && bestLen <= 9)
                         {
-                            Console.WriteLine($"ticket \"{currentTicket}\" - {lenRightSide}{singleSymbolRight}");
+                            Console.WriteLine($"ticket \"{currentTicket}\" - {bestLen}{singleSymbolRight}");
                         }
                         
                         
